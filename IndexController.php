@@ -115,7 +115,7 @@ class IndexController extends AbstractController
     #[Route('/db-dashboard0', name: 'app_db-dashboard0')]
     public function dbdashboard(): Response
     {
-        return $this->render('index/db-dashboard.html.twig', [
+        return $this->render('back/db-dashboard.html.twig', [
             'controller_name' => 'IndexController',
         ]);
     }

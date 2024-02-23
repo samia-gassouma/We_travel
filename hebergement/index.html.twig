@@ -1,0 +1,393 @@
+{% extends 'base2.html.twig' %}
+    {% block title %}hebergements{% endblock %}
+    {% block content %}
+<body data-barba="wrapper">
+
+    <div class="dashboard" data-x="dashboard" data-x-toggle="-is-sidebar-open">
+        <div class="dashboard__sidebar bg-white scroll-bar-1">
+
+            <div class="sidebar -dashboard">
+
+                <div class="sidebar__item ">
+
+
+                    <a href="{{ path('app_db-dashboard') }}" class="sidebar__button d-flex items-center text-15 lh-1 fw-500">
+            <img src="img/dashboard/sidebar/compass.svg" alt="image" class="mr-15">
+            Dashboard
+          </a>
+
+
+                </div>
+
+                <div class="sidebar__item ">
+
+
+                    <a href="#" class="sidebar__button d-flex items-center text-15 lh-1 fw-500">
+            <img src="img/dashboard/sidebar/booking.svg" alt="image" class="mr-15">
+            Booking Manager
+          </a>
+
+
+                </div>
+
+                <div class="sidebar__item ">
+
+
+                    <div class="accordion -db-sidebar js-accordion">
+                        <div class="accordion__item">
+                            <div class="accordion__button">
+                                <div class="sidebar__button col-12 d-flex items-center justify-between">
+                                    <div class="d-flex items-center text-15 lh-1 fw-500">
+                                        <img src="img/dashboard/sidebar/hotel.svg" alt="image" class="mr-10"> Manage Hotel
+                                    </div>
+                                    <div class="icon-chevron-sm-down text-7"></div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__content">
+                                <ul class="list-disc pt-15 pb-5 pl-40">
+
+                                    <li>
+                                        <a href="{{path('app_Hebergement_list') }}" class="text-15">All Hotels</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{path('app_form_new_hebergment') }}" class="text-15">Add Hotel</a>
+                                    </li>
+
+                                    
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="sidebar__item ">
+
+
+                     <div class="sidebar__item ">
+
+
+                   <div class="accordion -db-sidebar js-accordion">
+                        <div class="accordion__item">
+                            <div class="accordion__button">
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                </div>
+
+                <div class="sidebar__item ">
+
+
+                    <div class="accordion -db-sidebar js-accordion">
+                        <div class="accordion__item">
+                            <div class="accordion__button">
+                                <div class="sidebar__button col-12 d-flex items-center justify-between">
+                                    <div class="d-flex items-center text-15 lh-1 fw-500">
+                                        <img src="img/dashboard/sidebar/sneakers.svg" alt="image" class="mr-10"> Manage Event
+                                    </div>
+                                    <div class="icon-chevron-sm-down text-7"></div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__content">
+                                <ul class="list-disc pt-15 pb-5 pl-40">
+
+                                    <li>
+                                        <a href="#" class="text-15">All Hotels</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-15">Add Hotel</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-15">Recovery</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="sidebar__item ">
+
+
+                    <div class="accordion -db-sidebar js-accordion">
+                        <div class="accordion__item">
+                            <div class="accordion__button">
+                                <div class="sidebar__button col-12 d-flex items-center justify-between">
+                                    <div class="d-flex items-center text-15 lh-1 fw-500">
+                                        <img src="img/dashboard/sidebar/house.svg" alt="image" class="mr-10"> Manage Holiday Rental
+                                    </div>
+                                    <div class="icon-chevron-sm-down text-7"></div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__content">
+                                <ul class="list-disc pt-15 pb-5 pl-40">
+
+                                    <li>
+                                        <a href="#" class="text-15">All Hotels</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-15">Add Hotel</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-15">Recovery</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="sidebar__item ">
+
+
+                    <div class="accordion -db-sidebar js-accordion">
+                        <div class="accordion__item">
+                            <div class="accordion__button">
+                                <div class="sidebar__button col-12 d-flex items-center justify-between">
+                                    <div class="d-flex items-center text-15 lh-1 fw-500">
+                                        <img src="img/dashboard/sidebar/taxi.svg" alt="image" class="mr-10"> Manage Car
+                                    </div>
+                                    <div class="icon-chevron-sm-down text-7"></div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__content">
+                                <ul class="list-disc pt-15 pb-5 pl-40">
+
+                                    <li>
+                                        <a href="#" class="text-15">All Hotels</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-15">Add Hotel</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-15">Recovery</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="sidebar__item ">
+
+
+                     <div class="sidebar__item ">
+
+
+                   <div class="accordion -db-sidebar js-accordion">
+                        <div class="accordion__item">
+                            <div class="accordion__button">
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                </div>
+
+                <div class="sidebar__item ">
+
+
+                    <div class="accordion -db-sidebar js-accordion">
+                        <div class="accordion__item">
+                            <div class="accordion__button">
+                                <div class="sidebar__button col-12 d-flex items-center justify-between">
+                                    <div class="d-flex items-center text-15 lh-1 fw-500">
+                                        <img src="img/dashboard/sidebar/airplane.svg" alt="image" class="mr-10"> Manage destinations
+                                    </div>
+                                    <div class="icon-chevron-sm-down text-7"></div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__content">
+                                <ul class="list-disc pt-15 pb-5 pl-40">
+
+                                    <li>
+                                        <a href="{{path('app_Voyage_list')}}" class="text-15">All destination</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{path('app_form_new1')}}" class="text-15">Add destination</a>
+                                    </li>
+
+                                    
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="sidebar__item ">
+
+
+                    <div class="accordion -db-sidebar js-accordion">
+                        <div class="accordion__item">
+                            <div class="accordion__button">
+                                <div class="sidebar__button col-12 d-flex items-center justify-between">
+                                    <div class="d-flex items-center text-15 lh-1 fw-500">
+                                        <img src="img/dashboard/sidebar/airplane.svg" alt="image" class="mr-10"> Manage destinations
+                                    </div>
+                                    <div class="icon-chevron-sm-down text-7"></div>
+                                </div>
+                            </div>
+
+                            <div class="accordion__content">
+                                <ul class="list-disc pt-15 pb-5 pl-40">
+
+                                    <li>
+                                        <a href="{{path('app_Voyage_list')}}" class="text-15">All destination</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{path('app_form_new1')}}" class="text-15">Add destination</a>
+                                    </li>
+
+                                    
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="sidebar__item ">
+
+
+                    <a href="#" class="sidebar__button d-flex items-center text-15 lh-1 fw-500">
+            <img src="img/dashboard/sidebar/log-out.svg" alt="image" class="mr-15">
+            Logout
+          </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="dashboard__main">
+            <div class="dashboard__content bg-light-2">
+                <div class="row y-gap-20 justify-between items-end pb-60 lg:pb-40 md:pb-32">
+                    <div class="col-auto">
+
+                        <h1 class="text-30 lh-14 fw-600">All Hotels</h1>
+                        <div class="text-15 text-light-1">Lorem ipsum dolor sit amet, consectetur.</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                    </div>
+                </div>
+
+
+
+               
+
+
+                <div class="py-30 px-30 rounded-4 bg-white shadow-3">
+    <div class="overflow-scroll scroll-bar-1">
+        <table class="table-4 -border-bottom col-12" style="border-collapse: collapse;">
+            <thead class="bg-light-2">
+                <tr>
+                
+                    
+                    <th style="padding: 8px;">id</th>
+                    <th style="padding: 8px;">id voyage</th>
+                    
+                    <th style="padding: 8px;">nomH</th>
+                    <th style="padding: 20px;">type</th>
+                    <th style="padding: 20px;">qualite</th>
+                    <th style="padding: 20px;">nombre_chambre</th>
+                    <th style="padding: 20px;">liste_activite</th>
+                    <th style="padding: 8px;">Prix</th>
+                    <th style="padding: 20px;">image de l'hotel</th>
+                    <th style="padding: 20px;">action</th>
+
+               
+                </tr>
+            </thead>
+            <tbody>
+                {% for hebergement in testers %}
+                <tr>
+
+                   
+                    <td style="padding: 8px;"> {{ hebergement.id }}</td>
+                    <td style="padding: 8px;"> {{ hebergement.getVoyageId() }}</td>
+                    <td style="padding: 8px;"> {{ hebergement.nomH }}</td>
+                    <td style="padding: 20px;">{{ hebergement.type }}</td>
+                    <td style="padding: 20px;">{{ hebergement.qualite }}</td>
+                    <td style="padding: 20px;">{{ hebergement.getNombreChambre()  }}</td>
+                    <td style="padding: 20px;">{{ hebergement.getListeActivite() }}</td>
+                    <td style="padding: 8px;"> {{ hebergement.Prix }}</td>
+                    <td style="padding: 20px;"> {{ hebergement.getImageHotel() }}</td>
+                    <td style="padding: 20px;">
+                        <div class="row x-gap-10 y-gap-10 items-center">
+                           
+                            <div class="col-auto">
+                                <form action="{{ path('app_form_new_edit', {'id': hebergement.id}) }}" method="post" >
+
+                                <button class="flex-center bg-light-2 rounded-4 size-35">
+                                    <i class="icon-edit text-16 text-light-1"></i>
+                                </button>
+                                </form>
+                            </div>
+                            <div class="col-auto">
+                                <form action="{{ path('app_Hebergement_delete', {'id': hebergement.id}) }}" method="post" >
+
+                                <button type ="submit" class="flex-center bg-light-2 rounded-4 size-35">
+                                    <i class="icon-trash-2 text-16 text-light-1"></i>
+                                </button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+                    
+</body>
+    {% endblock %}

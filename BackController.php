@@ -86,12 +86,8 @@ class BackController extends AbstractController
         $reponse->setDate(new \DateTime('now'));
         $form=$this->createForm(ReponseType::class, $reponse);
         $form->handleRequest($request);
-        if($form->isSubmitted() &&$form->isValid())
+        if($form->isSubmitted() )//&&$form->isValid()
             {
-                notyf()
-                ->position('x', 'center')
-                ->position('y', 'top')
-                ->addError('There was an error, check your form.');
                 $em->persist($reponse);
                 $em->flush();
                 $reclamation->setStatut("résolu");
@@ -105,13 +101,6 @@ class BackController extends AbstractController
                     //$form=$this->createForm(ReclamationType::class, $reclamation);
                     return $this->redirectToRoute('app_db-vendor-dashboard');
 
-            }
-            else if($form->isSubmitted() && !$form->isValid())
-            {
-                notyf()
-                ->position('x', 'center')
-                ->position('y', 'top')
-                ->addError('There was an error, check your form.');
             }
             //$list=null;
            // $list=$rR->findByClient($id);//replace by the example 

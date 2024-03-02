@@ -34,10 +34,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      */
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?string $password = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255,nullable: true)]
     /**
      * @Assert\NotBlank(message="First name cannot be left blank.")
      * @Assert\Regex(
@@ -47,7 +47,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
         private ?string $Nom = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255,nullable: true)]
      /**
        * @Assert\NotBlank(message="Last name cannot be left blank.")
        * @Assert\Regex(
@@ -62,6 +62,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $google_id = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $Phone_Number = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $Pays = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $description_user = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $imageName = null;
 
     public function __construct()
     {
@@ -201,6 +216,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): static
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getGoogleId(): ?string
+    {
+        return $this->google_id;
+    }
+
+    public function setGoogleId(?string $google_id): static
+    {
+        $this->google_id = $google_id;
+
+        return $this;
+    }
+
+    public function getPhoneNumber(): ?string
+    {
+        return $this->Phone_Number;
+    }
+
+    public function setPhoneNumber(?string $Phone_Number): static
+    {
+        $this->Phone_Number = $Phone_Number;
+
+        return $this;
+    }
+
+    public function getPays(): ?string
+    {
+        return $this->Pays;
+    }
+
+    public function setPays(?string $Pays): static
+    {
+        $this->Pays = $Pays;
+
+        return $this;
+    }
+
+    public function getDescriptionUser(): ?string
+    {
+        return $this->description_user;
+    }
+
+    public function setDescriptionUser(?string $description_user): static
+    {
+        $this->description_user = $description_user;
+
+        return $this;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
+    }
+
+    public function setImageName(?string $imageName): static
+    {
+        $this->imageName = $imageName;
 
         return $this;
     }

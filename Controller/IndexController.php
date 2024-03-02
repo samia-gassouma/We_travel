@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,6 +8,13 @@ class IndexController extends AbstractController
 {
     #[Route('/index', name: 'app_index')]
     public function index(): Response
+    {
+        return $this->render('index/index.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
+    #[Route('/user/index', name: 'app_index_user')]
+    public function index2(): Response
     {
         return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
@@ -104,7 +109,7 @@ class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/db-booking', name: 'app_db-booking')]
+    #[Route('/admin/db-booking', name: 'app_db-booking')]
     public function dbbooking(): Response
     {
         return $this->render('back/db-booking.html.twig', [
@@ -112,7 +117,7 @@ class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/db-dashboard0', name: 'app_db-dashboard0')]
+    #[Route('/admin/db-dashboard0', name: 'app_db-dashboard0')]
     public function dbdashboard(): Response
     {
         return $this->render('back/db-dashboard.html.twig', [
@@ -120,7 +125,7 @@ class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/db-settings', name: 'app_db-settings')]
+    #[Route('/admin/db-settings', name: 'app_db-settings')]
     public function dbsettings(): Response
     {
         return $this->render('back/db-settings.html.twig', [
@@ -128,7 +133,7 @@ class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/db-wishlist', name: 'app_db-wishlist')]
+    #[Route('/admin/db-wishlist', name: 'app_db-wishlist')]
     public function dbwishlist(): Response
     {
         return $this->render('back/db-wishlist.html.twig', [
@@ -184,14 +189,6 @@ class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/signup', name: 'app_signup')]
-    public function signup(): Response
-    {
-        return $this->render('index/signup.html.twig', [
-            'controller_name' => 'IndexController',
-        ]);
-    }
-
     #[Route('/terms', name: 'app_terms')]
     public function terms(): Response
     {
@@ -222,21 +219,21 @@ class IndexController extends AbstractController
             'controller_name' => 'IndexController',
         ]);
     }
-    #[Route('/db-vendor-dashboard', name: 'app_db-vendor-dashboard')]
+    #[Route('/admin/db-vendor-dashboard', name: 'app_db-vendor-dashboard')]
     public function vendoraddDashboard(): Response
     {
         return $this->render('back/db-vendor-dashboard.html.twig', [
             'controller_name' => 'BackController',
         ]);
     }
-    #[Route('/db-vendor-add-hotel', name: 'app_db-vendor-add-hotel')]
+    #[Route('/admin/db-vendor-add-hotel', name: 'app_db-vendor-add-hotel')]
     public function vendoraddHotel(): Response
     {
         return $this->render('back/db-vendor-add-hotel.html.twig', [
             'controller_name' => 'BackController',
         ]);
     }
-    #[Route('/db-vendor-booking', name: 'app_db-vendor-booking')]
+    #[Route('/admin/db-vendor-booking', name: 'app_db-vendor-booking')]
     public function vendoraddBooking(): Response
     {
         return $this->render('back/db-vendor-booking.html.twig', [
@@ -244,14 +241,14 @@ class IndexController extends AbstractController
         ]);
     }
     
-    #[Route('/db-vendor-hotels', name: 'app_db-vendor-hotels')]
+    #[Route('/admin/db-vendor-hotels', name: 'app_db-vendor-hotels')]
     public function vendoraddDashHotels(): Response
     {
         return $this->render('back/db-vendor-hotels.html.twig', [
             'controller_name' => 'BackController',
         ]);
     }
-    #[Route('/db-vendor-recovery', name: 'app_db-vendor-recovery')]
+    #[Route('/admin/db-vendor-recovery', name: 'app_db-vendor-recovery')]
     public function vendoraddRecovery(): Response
     {
         return $this->render('back/db-vendor-recovery.html.twig', [

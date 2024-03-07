@@ -1,0 +1,113 @@
+{% extends 'base3.html.twig' %}
+{% block title %}Edit profile{% endblock %}
+{% block content %}
+<body data-barba="wrapper">
+    <div class="dashboard bg-blue-2" data-x="dashboard" data-x-toggle="-is-sidebar-open" >        
+            <div class="dashboard__content bg-blue-2">
+                <div class="py-30 px-30 rounded-4 bg-white shadow-3">
+                    <div class="tabs -underline-2 js-tabs">
+                        <div class="tabs__content pt-30 js-tabs-content">
+                            <div class="tabs__pane -tab-item-1 is-tab-el-active">
+                            {{ form_start(editForm) }}
+                               <div class="row y-gap-30 items-center">
+    <div class="col-auto">
+        <div class="d-flex ratio ratio-1:1 w-200 position-relative">
+    {% if editForm.vars.value.imageName is not null %}
+        <img src="{{ asset('uploads/' ~ editForm.vars.value.imageName) }}" alt="Current Profile Photo" class="img-ratio rounded-4">
+        <div class="d-flex justify-end px-10 py-10 h-100 w-100 position-absolute top-0 start-0">
+            <div class="size-40 bg-white rounded-4">
+                <i class="icon-trash text-16"></i>
+            </div>
+        </div>
+    {% else %}
+        <img src="{{ asset('img/misc/avatar-1.png') }}" alt="Default Profile Photo" class="img-ratio rounded-4">
+    {% endif %}
+</div>
+
+    </div>
+    <div class="col-auto">
+        <h4 class="text-16 fw-500">Your avatar</h4>
+        <div class="text-14 mt-5">PNG or JPG no bigger than 800px wide and tall.</div>
+        <div class="d-inline-block mt-15">
+            <label for="avatarFile" class="button h-50 px-24 -dark-1 bg-blue-1 text-white">
+                <i class="icon-upload-file text-20 mr-10"></i>
+                Browse
+            </label>
+            {{ form_widget(editForm.image_name, {'attr': {'style': 'display: none;'}, 'id': 'avatarFile'}) }}
+        </div>
+    </div>
+</div>
+
+
+                                <div class="border-top-light mt-30 mb-30"></div>
+
+                                <div class="col-xl-9">
+                                    <div class="row x-gap-20 y-gap-20">
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-input ">
+                                                {{form_widget(editForm.Nom)}}
+                                                <label class="lh-1 text-16 text-light-1">First Name</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-input ">
+                                                {{form_widget(editForm.prenom)}}
+                                                <label class="lh-1 text-16 text-light-1">Last Name</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-input ">
+                                                {{form_widget(editForm.email)}}
+                                                <label class="lh-1 text-16 text-light-1">Email</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-input ">
+                                                {{form_widget(editForm.Phone_Number)}}
+                                                <label class="lh-1 text-16 text-light-1">Phone Number</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-12">
+                                        <label for="Pays">Country:</label>
+                                            <div class="form-input">
+                                                
+                                                
+                                                {{ form_widget(editForm.Pays, { 'attr': {'class': 'form-control'} }) }}
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+
+                                            <div class="form-input ">
+                                                {{form_widget(editForm.description_user)}}
+                                                <label class="lh-1 text-16 text-light-1">About Yourself</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-inline-block pt-30">
+                                <button id="signInButton" class="button py-20 -dark-1 bg-blue-1 text-white" type="submit" style="width: 450px;">
+                                    Save changes <div class="icon-arrow-top-right ml-15"></div>
+                                </button>
+                                </div>
+                                {{ form_end(editForm) }}
+                            </div>
+                        </div>
+                </div>
+
+</body>
+    {% endblock %}

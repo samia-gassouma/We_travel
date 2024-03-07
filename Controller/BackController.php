@@ -15,7 +15,6 @@ class BackController extends AbstractController
             'controller_name' => 'BackController',
         ]);
     }
-    //Aymen benchaaben@gmafjezogijr,oijgrigezgrgnrleoze
 /*
     #[Route('/db-booking', name: 'app_db-booking')]
     public function booking(): Response

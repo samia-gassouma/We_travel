@@ -1,0 +1,335 @@
+{% extends 'base2.html.twig' %}
+{% block title %}Settings{% endblock %}
+{% block content %}
+
+<body data-barba="wrapper">
+
+    <div class="dashboard" data-x="dashboard" data-x-toggle="-is-sidebar-open">
+        <div class="dashboard__sidebar bg-white scroll-bar-1">
+
+
+            <div class="sidebar -dashboard">
+
+                <div class="sidebar__item">
+                    <div class="sidebar__button -is-active">
+                        <a href="{{ path('app_db_dashboard') }}" class="d-flex items-center text-15 lh-1 fw-500">
+                            <img src="img/dashboard/sidebar/compass.svg" alt="image" class="mr-15">
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar__item">
+                    <div class="sidebar__button ">
+                        <a href="{{ path('app_db-booking') }}" class="d-flex items-center text-15 lh-1 fw-500">
+                            <img src="img/dashboard/sidebar/booking.svg" alt="image" class="mr-15">
+                            Booking History
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar__item">
+                    <div class="sidebar__button ">
+                        <a href="{{ path('app_db-wishlist') }}" class="d-flex items-center text-15 lh-1 fw-500">
+                            <img src="img/dashboard/sidebar/bookmark.svg" alt="image" class="mr-15">
+                            Wishlist
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar__item">
+                    <div class="sidebar__button ">
+                        <a href="{{ path('app_db-settings') }}" class="d-flex items-center text-15 lh-1 fw-500">
+                            <img src="img/dashboard/sidebar/gear.svg" alt="image" class="mr-15">
+                            Settings
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar__item">
+                    <div class="sidebar__button ">
+                        <a href="#" class="d-flex items-center text-15 lh-1 fw-500">
+                            <img src="img/dashboard/sidebar/log-out.svg" alt="image" class="mr-15">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="dashboard__main">
+            <div class="dashboard__content bg-light-2">
+                <div class="row y-gap-20 justify-between items-end pb-60 lg:pb-40 md:pb-32">
+                    <div class="col-auto">
+
+                        <h1 class="text-30 lh-14 fw-600">Settings</h1>
+                        <div class="text-15 text-light-1">Lorem ipsum dolor sit amet, consectetur.</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                    </div>
+                </div>
+
+
+                <div class="py-30 px-30 rounded-4 bg-white shadow-3">
+                    <div class="tabs -underline-2 js-tabs">
+                        <div class="tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 js-tabs-controls">
+
+                            <div class="col-auto">
+                                <button
+                                    class="tabs__button text-18 lg:text-16 text-light-1 fw-500 pb-5 lg:pb-0 js-tabs-button is-tab-el-active"
+                                    data-tab-target=".-tab-item-1">Personal Information</button>
+                            </div>
+
+                            <div class="col-auto">
+                                <button
+                                    class="tabs__button text-18 lg:text-16 text-light-1 fw-500 pb-5 lg:pb-0 js-tabs-button "
+                                    data-tab-target=".-tab-item-2">Location Information</button>
+                            </div>
+
+                            <div class="col-auto">
+                                <button
+                                    class="tabs__button text-18 lg:text-16 text-light-1 fw-500 pb-5 lg:pb-0 js-tabs-button "
+                                    data-tab-target=".-tab-item-3">Change Password</button>
+                            </div>
+
+                        </div>
+
+                        <div class="tabs__content pt-30 js-tabs-content">
+                            <div class="tabs__pane -tab-item-1 is-tab-el-active">
+
+
+                                <div class="border-top-light mt-30 mb-30"></div>
+
+
+
+
+                                {# myform start #}
+
+                                <div class="tabs__pane -tab-item-1 is-tab-el-active">
+                                    {{ form_start(form, {'attr': {'class': 'layout-pt-md layout-pb-md'}, 'novalidate':
+                                    'novalidate'}) }}
+
+                                    {% if form.vars.submitted %}
+                                    <div class="h4 alert alert-{{ form.vars.valid ? 'success' : 'warning' }}">
+                                        {{ (form.vars.valid ? 'form_valid' : 'form_not_valid')|trans({}, 'post_26') }}
+                                    </div>
+                                    {% elseif form.vars.valid is not null %}
+                                    {# Display the message when the form is not submitted but has been initialized #}
+                                    <div class="h4 alert alert-success">
+                                        {{ 'form_valid'|trans({}, 'post_26') }}
+                                    </div>
+                                    {% endif %}
+
+                                    <div class="container">
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="text-22 fw-500">Formulaire</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row x-gap-60 y-gap-30 pt-30">
+                                            <div class="col-lg-6">
+
+                                                <div class="fw-500 mb-10">{{ form_label(form.date) }}</div>
+
+                                                {{ form_widget(form.date, {'attr': {'class': 'form-input', 'type':
+                                                'datetime-local', 'format': 'd-m-Y H:i:s'}}) }}
+                                                {{ form_errors(form.date, {'attr': {'class':
+                                                'form-error','style':'color:
+                                                red;'}}) }}
+
+                                            </div>
+
+                                            <div class="col-12">
+                                                    <label class="lh-1 text-16 text-light-1">{{form_label(form.reclamation)}}</label>
+
+                                                <div class="form-input ">
+                                                    {{form_widget(form.reclamation, {'attr': {'type':'text'}})}}
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                                {{form_label(form.etat)}}
+                                                </label>
+
+
+                                            <div class="form-input ">
+
+
+                                                {{form_widget(form.etat,{'attr': {'type': 'text'}} )}}
+                                            </div>
+
+                                        </div>
+                                        <div>
+                                            {{ form_errors(form.etat, {'attr': {'class': 'form-error'}}) }}
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="fw-500 mb-10">{{ form_label(form.contenu) }}</div>
+
+                                            <div class="form-input">
+                                                {{ form_widget(form.contenu) }}
+                                            </div>
+                                            <div>
+                                                {{ form_errors(form.contenu, {'attr': {'class': 'form-error'}}) }}
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            {{ form_widget(form.send, {'attr': {'class': 'button px-24 h-50 -dark-1
+                                            bg-blue-1 text-white icon-arrow-top-right', 'style': 'margin-top: 50px;
+                                            align-item: center; justify-content: center;'}}) }}
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                {{ form_end(form, {'render_rest': false}) }}
+                            </div>
+
+                            {# my form end #}
+                        </div>
+
+                        <div class="tabs__pane -tab-item-2">
+                            <div class="col-xl-9">
+                                <div class="row x-gap-20 y-gap-20">
+                                    <div class="col-12">
+
+                                        <div class="form-input ">
+                                            <input type="text" required>
+                                            <label class="lh-1 text-16 text-light-1">Address Line 1</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12">
+
+                                        <div class="form-input ">
+                                            <input type="text" required>
+                                            <label class="lh-1 text-16 text-light-1">Address Line 2</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-input ">
+                                            <input type="text" required>
+                                            <label class="lh-1 text-16 text-light-1">City</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-input ">
+                                            <input type="text" required>
+                                            <label class="lh-1 text-16 text-light-1">State</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-input ">
+                                            <input type="text" required>
+                                            <label class="lh-1 text-16 text-light-1">Select Country</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-input ">
+                                            <input type="text" required>
+                                            <label class="lh-1 text-16 text-light-1">ZIP Code</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="d-inline-block">
+
+                                            <a href="#" class="button h-50 px-24 -dark-1 bg-blue-1 text-white">
+                                                Save Changes <div class="icon-arrow-top-right ml-15"></div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabs__pane -tab-item-3">
+                            <div class="col-xl-9">
+                                <div class="row x-gap-20 y-gap-20">
+                                    <div class="col-12">
+
+                                        <div class="form-input ">
+                                            <input type="text" required>
+                                            <label class="lh-1 text-16 text-light-1">Current Password</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12">
+
+                                        <div class="form-input ">
+                                            <input type="text" required>
+                                            <label class="lh-1 text-16 text-light-1">New Password</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12">
+
+                                        <div class="form-input ">
+                                            <input type="text" required>
+                                            <label class="lh-1 text-16 text-light-1">New Password Again</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="row x-gap-10 y-gap-10">
+                                            <div class="col-auto">
+
+                                                <a href="#" class="button h-50 px-24 -dark-1 bg-blue-1 text-white">
+                                                    Save Changes <div class="icon-arrow-top-right ml-15"></div>
+                                                </a>
+
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <button
+                                                    class="button h-50 px-24 -blue-1 bg-blue-1-05 text-blue-1">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</body>
+{% endblock %}

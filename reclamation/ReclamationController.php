@@ -38,6 +38,7 @@ class IndexController extends AbstractController
         $reclamation->setStatut("en attente");
         $user=$uR->find($id);
         $reclamation->setClient($user);
+       // $reclamation->setDate(new \DateTime());
         $reclamation->setDate_Envoi(new \DateTime('now'));
         $form=$this->createForm(ReclamationType::class, $reclamation);
         $form->handleRequest($request);
@@ -118,8 +119,19 @@ class IndexController extends AbstractController
         {
             $em->persist($reclamation);
             $em->flush();
+            notyf()
+     ->position('x', 'center')
+     ->position('y', 'top')
+     ->addSuccess('Your changes have been saved.');
             return $this->redirectToRoute('app_contact',['id' => $id]);
         } 
+        else if($form->isSubmitted() && !$form->isValid())
+            {
+                notyf()
+                ->position('x', 'center')
+                ->position('y', 'top')
+                ->addError('There was an error, check your form.');
+            }
         $list=null;
             $list=$rR->findByClient($id);//replace by the example 
         return $this->renderForm("index/ui-elements.html.twig",

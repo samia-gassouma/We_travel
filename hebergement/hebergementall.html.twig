@@ -1,0 +1,88 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Voyages{% endblock %}
+
+{% block content %}
+<div class="big-boxH">
+    <div class="voyage-container">
+        {% for hebergement in testers %}
+            <div class="voyage-item">
+                <div class="voyage-image">
+                    <img src="{{ asset('uploads/images/' ~ hebergement.imageFile) }}" alt="{{ hebergement.nomH }}">
+                </div>
+                <div class="voyage-details">
+                    <div class="attribute-box">
+                        <div class="attribute-label">Location:</div>
+                        <div class="attribute-value">{{  hebergement.nomH  }}</div>
+                    </div>
+                </div>
+                <div class="voyage-details">
+                    <div class="attribute-box">
+                        <div class="attribute-label">Location:</div>
+                        <div class="attribute-value">{{  hebergement.type  }}</div>
+                    </div>
+                </div>
+                <div class="voyage-details">
+                    <div class="attribute-box">
+                        <div class="attribute-label">Location:</div>
+                        <div class="attribute-value">{{ hebergement.qualite }}</div>
+                    </div>
+                </div>
+                <div class="voyage-details">
+                    <div class="attribute-box">
+                        <div class="attribute-label">Location:</div>
+                        <div class="attribute-value">{{  hebergement.getNombreChambre() }}</div>
+                    </div>
+                </div>
+                <div class="voyage-details">
+                    <div class="attribute-box">
+                        <div class="attribute-label">Location:</div>
+                        <div class="attribute-value">{{ hebergement.getListeActivite() }}</div>
+                    </div>
+                </div>
+                <div class="voyage-details">
+                    <div class="attribute-box">
+                        <div class="attribute-label">Location:</div>
+                        <div class="attribute-value">{{  hebergement.Prix }}</div>
+                    </div>
+                </div>
+               
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{# Pagination controls #}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
